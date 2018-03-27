@@ -1,0 +1,45 @@
+alias ls='ls -Gl '
+alias la='ls -la | tail -n+4'
+alias ll='ls -l '
+alias cl='clear'
+alias rst='reset'
+alias grep='grep --color=auto'
+alias df="df -h"
+alias du="du -h"
+
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias dropbox="cd ~/Dropbox"
+alias proj="cd ~/Project"
+alias hi="history | grep "
+
+alias v="vim -p"
+alias vi="vim -p"
+
+# OS X specific
+alias lockscreen='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias trash='rm -fr ~/.Trash'
+alias tree='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/   /" -e "s/-/|/"'
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias listener='lsof -i -P -n | grep LISTEN'
+alias ip="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+alias flush="dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# maintenance
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias knownhosts-list="ssh-keygen -l -f ~/.ssh/known_hosts"
+alias makepasswd="gpg --gen-random --armor 1 12"
+alias fuck='sudo $(history -p \!\!)'
+
+# weather
+alias weather-gib='curl "http://wttr.in/Gibraltar"'
+
+
+# python
+alias pyclean='find . -name "*.pyc" -exec rm {} \;'
+alias pydist='python setup.py sdist upload -r ipypi'
+alias pydev='python setup.py develop --no-deps'
+alias rmpyc='find . -iname "*.pyc" -delete'

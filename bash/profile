@@ -1,0 +1,11 @@
+export HISTCONTROL=ignoredups:ignorespace
+shopt -s histappend
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:qh:ll:ls -l:pwd:* --help"
+shopt -s histappend
+
+if [ -f ~/.bashrc ]; then 
+   . ~/.bashrc; 
+fi

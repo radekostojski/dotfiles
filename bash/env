@@ -1,0 +1,6 @@
+export PATH="$HOME/.bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+vim=$(which vim)
+export EDITOR=$vim
+export LESS="ij.5KMRX"
+export PAGER="less"

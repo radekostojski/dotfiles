@@ -27,3 +27,15 @@ TAGS
 .sass-cache
 *.pyc
 .idea/
+*.o
+*.so
+*.dll
+*.iso
+*.rar
+*.zip
+*.tgz
+*.tar
+*.tar.gz
+*.7z
+*.dmg
+node_modules

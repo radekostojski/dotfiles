@@ -1,0 +1,142 @@
+[user]
+	name = Radek Ostojski
+	email = radek.ostojski@addisongloballtd.com
+[github]
+    user = radek.ostojski
+    email = radek.ostojski@gmail.com
+[core]
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes
+    editor = vim
+    autocrlf = false
+    pager = less -R
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+    branch = auto
+    grep = auto
+    interactive = auto
+    status = auto
+    diff = auto
+    ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    attributesfile = ~/.gitattributes
+    excludesfile = /Users/davidson/.gitignore_global
+    editor = "/usr/bin/subl"
+    filemode = true
+    logallrefupdates = true
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[alias]
+    ec = config --global -e]
+    a = add
+    aa = add --all
+    alias = config --get-regexp "alias."
+    amend = commit --amend -v
+    bl = branch --list
+    br = branch --verbose --contains
+    c = commit -m
+    ca = commit -am
+    ci = commit --verbose
+    cl = clone --recursive
+    co = checkout
+    count = shortlog -sn
+    conflict = diff --name-only --diff-filter=U
+    d = diff
+    ec = config --global -e
+    fa = fetch --all
+    fp = format-patch --stdout
+    ff = merge --ff-only
+    noff = merge --no-ff
+    g = grep
+    ig = grep -i
+    l   = log --pretty=oneline --decorate --abbrev-commit --max-count=15
+    ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lll  = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log -p
+    m = merge
+    out = log origin..HEAD
+    p = pull
+    pom = push origin master
+    pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
+    pulls = !git pull $@ && git submodule update --init
+    psh = push
+    pshall = push --follow-tags --all
+    pst = push --tags
+    r = remote
+    s = status
+    sa = status -sb --ignore-submodules=untracked
+    su = status -sb -uno --ignore-submodules=untracked
+    st = status -sb
+    t = tag
+    tl = tag -l
+    who = shortlog -s --
+    x = checkout HEAD
+
+  # undo aliases
+    undo = !git reset --hard
+    undoclean = !git reset --hard && git clean -fd
+    uncommit = !git reset --soft HEAD^
+    unadd = !git reset HEAD
+    unstage = !git reset HEAD
+
+[branch]
+    autosetupmerge = true
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+[merge]
+    tool = vimdiff
+#    tool = diffmerge
+    log = true
+    ff = only
+[rerere]
+    enabled = 1
+[include]
+    path = ~/.gitconfig.user
+    path = ~/.gitcredentials
+[diff]
+    tool = vimdiff
+#    tool = diffmerge
+    renames = copies
+    mnemonicprefix = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+    keepBackup = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[filter "hawser"]
+        clean = git hawser clean %f
+        smudge = git hawser smudge %f
+        required = true
+[filter "lfs"]
+        clean = git lfs clean %f
+        smudge = git lfs smudge %f
+        required = true
+[push]
+	default = simple
+#    default = current
+#    default = upstream
+#    default = matching
+[pull]
+    rebase = false
+[include]
+    path = .gitconfig.user

@@ -1,0 +1,37 @@
+set nocompatible
+set ruler
+set showcmd
+set incsearch
+set hlsearch
+set smartcase
+set ignorecase
+set nowrap
+set backspace=indent,eol,start
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set number
+set list listchars=tab:\ \ ,trail:·
+set timeout timeoutlen=1000 ttimeoutlen=100
+set laststatus=2
+set guioptions-=T
+set encoding=utf-8
+set autoread
+set shortmess+=I
+set splitbelow
+set splitright
+set cursorline
+set visualbell
+set wildmenu
+set lazyredraw
+set showmatch
+set runtimepath=/.vim,/usr/local/share/vim/vimfiles,/usr/local/share/vim,/usr/local/share/vim/vimfiles/after,~/.vim/after,/usr/local/Cellar/vim/7.4.936/share/vim/vim74
+
+set background=dark
+set wrapmargin=8
+
+let g:netrw_liststyle=3
+autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+set colorcolumn=120
+syntax on
+" Plugins

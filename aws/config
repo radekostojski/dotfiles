@@ -1,0 +1,6 @@
+[default]
+region = eu-west-1
+output = table
+[prod]
+region = eu-west-2
+output = table
