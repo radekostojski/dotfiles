@@ -13,6 +13,10 @@ Host *.addisonglobal.cloud
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 
+Host 10.32.3.*
+  User moplay
+  IdentityFile ~/.ssh/id_rsa
+
 Host git-codecommit.*.amazonaws.com
   User APKAIRCYUEAJSVYOPOJA
   IdentityFile ~/.ssh/codecommit

@@ -1,6 +1,9 @@
-alias ls='ls -Gl '
+alias ls='ls -GFlh '
 alias la='ls -la | tail -n+4'
-alias ll='ls -l '
+alias ll='ls -FGlAhp '
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias mkdir='mkdir -pv'
 alias cl='clear'
 alias rst='reset'
 alias grep='grep --color=auto'
@@ -27,6 +30,9 @@ alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false &
 alias listener='lsof -i -P -n | grep LISTEN'
 alias ip="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias flush="dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias o='open'
+alias oo='open .'
+alias pubkey='cat .ssh/id_rsa.pub | pbcopy | printf "↪ copied id_rsa.pub to clipboard\n"'
 
 # maintenance
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
