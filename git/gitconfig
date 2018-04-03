@@ -96,7 +96,7 @@
     autosetupmerge = true
 [branch "master"]
     remote = origin
-    merge = refs/heads/master
+#    merge = refs/heads/master
 [merge]
     tool = vimdiff
 #    tool = diffmerge
