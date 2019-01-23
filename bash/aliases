@@ -27,6 +27,8 @@ alias trash='rm -fr ~/.Trash'
 alias tree='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/   /" -e "s/-/|/"'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias listener='lsof -i -P -n | grep LISTEN'
 alias ip="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias flush="dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
@@ -39,13 +41,19 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias knownhosts-list="ssh-keygen -l -f ~/.ssh/known_hosts"
 alias makepasswd="gpg --gen-random --armor 1 12"
 alias fuck='sudo $(history -p \!\!)'
+alias upgrade-all="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update"
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+alias reload="exec $SHELL -l"
 
 # weather
 alias weather-gib='curl "http://wttr.in/Gibraltar"'
 
+# tshooting
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pydist='python setup.py sdist upload -r ipypi'
 alias pydev='python setup.py develop --no-deps'
 alias rmpyc='find . -iname "*.pyc" -delete'
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
