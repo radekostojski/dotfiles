@@ -39,3 +39,5 @@ TAGS
 *.7z
 *.dmg
 node_modules
+*.retry
+inv
