@@ -8,8 +8,10 @@
     excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes
     editor = vim
+    filemode = true
     autocrlf = false
     pager = less -R
+    logallrefupdates = true
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [color]
     branch = auto
@@ -31,13 +33,6 @@
     added = yellow
     changed = green
     untracked = cyan
-[core]
-    attributesfile = ~/.gitattributes
-    excludesfile = /Users/davidson/.gitignore_global
-    editor = "vim"
-    filemode = true
-    logallrefupdates = true
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [alias]
     ec = config --global -e
     a = add
